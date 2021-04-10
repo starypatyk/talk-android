@@ -124,6 +124,7 @@ public class MagicPreviewMessageViewHolder extends MessageHolders.IncomingImageM
                     filesAppIntent.setPackage(context.getString(R.string.nc_import_accounts_from));
                     filesAppIntent.putExtra(BundleKeys.INSTANCE.getKEY_ACCOUNT(), accountString);
                     filesAppIntent.putExtra(BundleKeys.INSTANCE.getKEY_FILE_ID(), message.getSelectedIndividualHashMap().get("id"));
+                    filesAppIntent.putExtra(BundleKeys.INSTANCE.getKEY_PREVIEW_DIRECT(), true);
                     context.startActivity(filesAppIntent);
                 } else {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(message.getSelectedIndividualHashMap().get("link")));
